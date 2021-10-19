@@ -9,9 +9,9 @@ class Home extends BaseController
         $session = session();
         $data['username']=$session->username;
         if (isset($session->logado)){
-            $postModel = new \App\Models\PostModel();
-            $data['item_data'] = $postModel->orderBy('id', 'DESC')->paginate(10);
-            $data['pagination_link'] = $postModel->pager;
+            $readModel = new \App\Models\ReadModel();
+            $data['item_data'] = $readModel->paginate(3);
+            $data['pager'] = $readModel->pager;
             return view('home_view', $data);
 
     

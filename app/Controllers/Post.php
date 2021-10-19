@@ -13,8 +13,9 @@ class Post extends BaseController
     {
         
         $thumb = $this->request->getFile('thumb');
-        $thumbname = $thumb->getName();
         $banner = $this->request->getFile('banner');
+
+        $thumbname = $thumb->getName();
         $bannername = $banner->getName();
         
         $thumbsave = \Config\Services::image() 
